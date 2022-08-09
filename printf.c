@@ -24,6 +24,10 @@ int _printf(const char *format, ...)
 					count = count + print_char(args);
 					i += 2;
 					break;
+				case 's':
+					count = count + print_string(arg);
+					i += 2;
+					break;
 				default:
 					_putchar(format[i]);
 					_putchar(format[i + 1]);

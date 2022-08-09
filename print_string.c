@@ -1,23 +1,31 @@
 #include "main.h"
 
-/** 
- *  print_string - A function to print a string.
- *  @args: The string to print.
+/**
+ *  _puts - A function to print a string.
+ *  @str: The string to print.
  *  Description: This function prints a string to stdout.
  *  Return: The number of characters printed.
  */
 
-int _puts (char *str)
+int _puts(char *str)
 {
 	int i = 0;
+
 	while (str[i])
 	{
-		putchar(str[i]);
+		_putchar(str[i]);
 		i++;
 	}
 	return (i);
 }
-int print_string (va_list arg)
+
+/**
+ * print_string - Function that prints a string
+ * @arg: arguments counts
+ * Return: return the number of char
+ */
+
+int print_string(va_list args)
 {
 	return (_puts(va_arg(args, char *)));
 }

@@ -25,7 +25,12 @@ int _printf(const char *format, ...)
 					i += 2;
 					break;
 				case 's':
-					count = count + print_string(arg);
+					count = count + print_string(args);
+					i += 2;
+					break;
+				case '%':
+					_putchar('%');
+					count++;
 					i += 2;
 					break;
 				default:

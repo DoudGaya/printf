@@ -10,13 +10,13 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, count = 0;
+	int i, count = 0;
 	va_list args;
 
 	va_start(args, format);
-	while (format[i])
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		while (format[i] == '%')
+		while (format[i] == '%' && format[i + 1] != ' ')
 		{
 			switch (format[i + 1])
 			{
@@ -34,13 +34,10 @@ int _printf(const char *format, ...)
 							i += 2;
 			}
 		}
-		if (format[i])
-		{
-			_putchar(format[i]);
-			count++;
-			i++;
-		}
-		va_end(args);
+		/* count the number of character*/	
+		count = count + _putchar(format[i]);
 	}
+	va_end(args);
+	
 	return (count);
 }

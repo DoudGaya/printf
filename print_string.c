@@ -6,7 +6,6 @@
  *  Description: This function prints a string to stdout.
  *  Return: The number of characters printed.
  */
-
 int _puts(char *str)
 {
 	int i = 0;
@@ -24,7 +23,6 @@ int _puts(char *str)
  * @arg: arguments counts
  * Return: return the number of char
  */
-
 int print_string(va_list args)
 {
 	return (_puts(va_arg(args, char *)));
